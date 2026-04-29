@@ -147,9 +147,14 @@ function CoursesSection({ courses }: { courses: Course[] }) {
             className="p-3 rounded-xl bg-secondary/30 hover:bg-secondary/50 transition-colors cursor-pointer"
           >
             <div className="flex items-start justify-between gap-2 mb-1">
-              <h4 className="text-sm font-medium text-foreground leading-tight">
-                {course.title}
-              </h4>
+              <div className="flex-1">
+                <h4 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {course.title[language] || course.title.en}
+                </h4>
+                <p className="text-xs text-muted-foreground line-clamp-2 mt-0.5">
+                  {course.description[language] || course.description.en}
+                </p>
+              </div>
               <Badge
                 variant="outline"
                 className="text-xs shrink-0"
@@ -158,9 +163,6 @@ function CoursesSection({ courses }: { courses: Course[] }) {
                 {course.level}
               </Badge>
             </div>
-            <p className="text-xs text-muted-foreground line-clamp-2">
-              {course.description}
-            </p>
             <div className="flex items-center gap-2 mt-2">
               <span className="text-xs text-muted-foreground">
                 {course.verseCount} verses
@@ -204,7 +206,7 @@ function GuidanceSection({ topics }: { topics: GuidanceTopic[] }) {
             </div>
             <div className="min-w-0 flex-1">
               <h4 className="text-sm font-medium text-foreground truncate">
-                {topic.title}
+                {topic.title[language] || topic.title.en}
               </h4>
               <p className="text-xs text-muted-foreground">
                 {t(topic.category.toLowerCase() as any)}
@@ -240,7 +242,7 @@ function SevaDomainSection({ domains }: { domains: SevaDomain[] }) {
                 {domain.sanskrit}
               </div>
               <div className="text-xs text-foreground font-medium">
-                {domain.english}
+                {language === 'hi' ? (domain.hindi || domain.sanskrit) : language === 'bn' ? (domain.bengali || domain.sanskrit) : domain.english}
               </div>
             </div>
           ))}

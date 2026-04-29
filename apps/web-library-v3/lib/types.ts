@@ -50,27 +50,29 @@ export type Relations = {
   seva_domains: SevaDomain[]
 }
 
-export type Course = {
+export interface Course {
   id: string
-  title: string
-  description: string
+  title: Record<string, string>
+  description: Record<string, string>
   level: 'beginner' | 'intermediate' | 'advanced'
   ageGroups: AgeGroup[]
   verseCount: number
 }
 
-export type GuidanceTopic = {
+export interface GuidanceTopic {
   id: string
-  title: string
+  title: Record<string, string>
   category: string
-  description: string
+  description: Record<string, string>
 }
 
-export type SevaDomain = {
+export interface SevaDomain {
   id: string
   sanskrit: string
+  hindi?: string
+  bengali?: string
   english: string
-  description: string
+  description: Record<string, string>
   icon?: string
 }
 

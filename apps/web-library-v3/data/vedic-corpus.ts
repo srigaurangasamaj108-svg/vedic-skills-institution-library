@@ -118,8 +118,26 @@ export const vedicCorpusTree: TreeNode[] = [
                     type: 'work',
                     verseCount: 700,
                     children: [
-                      { id: 'bg-1', name: 'Chapter 1: Arjuna Visada Yoga', sanskrit: 'अर्जुन विषाद योग', type: 'chapter', verseCount: 47, children: generateVerseNodes('bg-1', 47) },
-                      { id: 'bg-2', name: 'Chapter 2: Sankhya Yoga', sanskrit: 'सांख्य योग', type: 'chapter', verseCount: 72, children: generateVerseNodes('bg-2', 72) },
+                      { 
+                        id: 'bg-1', 
+                        name: 'Chapter 1: Arjuna Visada Yoga', 
+                        sanskrit: 'अर्जुन विषाद योग', 
+                        hindi: 'अध्याय 1: अर्जुन विषाद योग',
+                        bengali: 'অধ্যায় ১: অর্জুন বিষাদ যোগ',
+                        type: 'chapter', 
+                        verseCount: 47, 
+                        children: generateVerseNodes('bg-1', 47) 
+                      },
+                      { 
+                        id: 'bg-2', 
+                        name: 'Chapter 2: Sankhya Yoga', 
+                        sanskrit: 'सांख्य योग', 
+                        hindi: 'अध्याय 2: सांख्य योग',
+                        bengali: 'অধ্যায় ২: সাংখ্য যোগ',
+                        type: 'chapter', 
+                        verseCount: 72, 
+                        children: generateVerseNodes('bg-2', 72) 
+                      },
                       { id: 'bg-3', name: 'Chapter 3: Karma Yoga', sanskrit: 'कर्म योग', type: 'chapter', verseCount: 43, children: generateVerseNodes('bg-3', 43) },
                       { id: 'bg-4', name: 'Chapter 4: Jnana Yoga', sanskrit: 'ज्ञान योग', type: 'chapter', verseCount: 42, children: generateVerseNodes('bg-4', 42) },
                       { id: 'bg-5', name: 'Chapter 5: Karma Sannyasa Yoga', sanskrit: 'कर्म सन्न्यास योग', type: 'chapter', verseCount: 29, children: generateVerseNodes('bg-5', 29) },
@@ -301,24 +319,36 @@ export const sampleVerse: Verse = {
 export const sampleCourses: Course[] = [
   {
     id: 'intro-gita',
-    title: 'Introduction to Bhagavad Gita',
-    description: 'A foundational course exploring the timeless wisdom of the Gita for modern life.',
+    title: { en: 'Introduction to Bhagavad Gita', hi: 'भगवद्गीता परिचय', bn: 'ভগবদ্গীতা পরিচিতি' },
+    description: { 
+      en: 'A foundational course exploring the timeless wisdom of the Gita for modern life.',
+      hi: 'आधुनिक जीवन के लिए गीता के शाश्वत ज्ञान की खोज करने वाला एक आधारभूत पाठ्यक्रम।',
+      bn: 'আধুনিক জীবনের জন্য গীতার কালজয়ী জ্ঞান অন্বেষণকারী একটি মৌলিক কোর্স।'
+    },
     level: 'beginner',
     ageGroups: ['students', 'professionals'],
     verseCount: 18
   },
   {
     id: 'karma-yoga-deep',
-    title: 'Karma Yoga: Path of Action',
-    description: 'Deep dive into the philosophy of selfless action and its practical application.',
+    title: { en: 'Karma Yoga: Path of Action', hi: 'कर्म योग: कर्म का मार्ग', bn: 'কর্মযোগ: কর্মের পথ' },
+    description: { 
+      en: 'Deep dive into the philosophy of selfless action and its practical application.',
+      hi: 'निःस्वार्थ कर्म के दर्शन और उसके व्यावहारिक अनुप्रयोग का गहरा अध्ययन।',
+      bn: 'নিঃস্বার্থ কর্মের দর্শন এবং এর ব্যবহারিক প্রয়োগের গভীর আলোচনা।'
+    },
     level: 'intermediate',
     ageGroups: ['professionals', 'elders'],
     verseCount: 45
   },
   {
     id: 'gita-for-kids',
-    title: 'Gita Stories for Kids',
-    description: 'Simplified teachings through engaging stories and activities.',
+    title: { en: 'Gita Stories for Kids', hi: 'बच्चों के लिए गीता की कहानियाँ', bn: 'শিশুদের জন্য গীতার গল্প' },
+    description: { 
+      en: 'Simplified teachings through engaging stories and activities.',
+      hi: 'आकर्षक कहानियों और गतिविधियों के माध्यम से सरल शिक्षाएँ।',
+      bn: 'আকর্ষণীয় গল্প এবং ক্রিয়াকলাপের মাধ্যমে সরল শিক্ষা।'
+    },
     level: 'beginner',
     ageGroups: ['kids'],
     verseCount: 10
@@ -327,17 +357,72 @@ export const sampleCourses: Course[] = [
 
 // Sample guidance topics
 export const sampleGuidance: GuidanceTopic[] = [
-  { id: 'stress', title: 'Managing Stress', category: 'Mental Health', description: 'Vedic wisdom for finding peace amid chaos' },
-  { id: 'decision', title: 'Making Decisions', category: 'Life Skills', description: 'Using dharmic principles for clear choices' },
-  { id: 'relationships', title: 'Harmonious Relationships', category: 'Family', description: 'Ancient wisdom for modern relationships' },
-  { id: 'purpose', title: 'Finding Purpose', category: 'Self-Discovery', description: 'Discovering your svadharma' }
+  { 
+    id: 'stress', 
+    title: { en: 'Managing Stress', hi: 'तनाव प्रबंधन', bn: 'মানসিক চাপ ব্যবস্থাপনা' }, 
+    category: 'Mental Health', 
+    description: { en: 'Vedic wisdom for finding peace amid chaos', hi: 'अशांति के बीच शांति खोजने के लिए वैदिक ज्ञान', bn: 'অশান্তির মধ্যে শান্তি খোঁজার জন্য বৈদিক জ্ঞান' } 
+  },
+  { 
+    id: 'decision', 
+    title: { en: 'Making Decisions', hi: 'निर्णय लेना', bn: 'সিদ্ধান্ত গ্রহণ' }, 
+    category: 'Life Skills', 
+    description: { en: 'Using dharmic principles for clear choices', hi: 'स्पष्ट विकल्पों के लिए धार्मिक सिद्धांतों का उपयोग करना', bn: 'স্পষ্ট পছন্দের জন্য ধার্মিক নীতির ব্যবহার' } 
+  },
+  { 
+    id: 'relationships', 
+    title: { en: 'Harmonious Relationships', hi: 'सौहार्दपूर्ण संबंध', bn: 'সুসংগত সম্পর্ক' }, 
+    category: 'Family', 
+    description: { en: 'Ancient wisdom for modern relationships', hi: 'आधुनिक संबंधों के लिए प्राचीन ज्ञान', bn: 'আধুনিক সম্পর্কের জন্য প্রাচীন জ্ঞান' } 
+  },
+  { 
+    id: 'purpose', 
+    title: { en: 'Finding Purpose', hi: 'उद्देश्य खोजना', bn: 'উদ্দেশ্য অনুসন্ধান' }, 
+    category: 'Self-Discovery', 
+    description: { en: 'Discovering your svadharma', hi: 'अपने स्वधर्म की खोज', bn: 'আপনার স্বধর্ম আবিষ্কার' } 
+  }
 ]
 
 // Sample seva domains
 export const sevaDomains: SevaDomain[] = [
-  { id: 'family', sanskrit: 'कुटुम्ब', english: 'Family', description: 'Nurturing family bonds and values' },
-  { id: 'ecology', sanskrit: 'पर्यावरण', english: 'Ecology', description: 'Environmental stewardship and respect for nature' },
-  { id: 'education', sanskrit: 'शिक्षा', english: 'Education', description: 'Spreading knowledge and wisdom' },
-  { id: 'health', sanskrit: 'आरोग्य', english: 'Health', description: 'Holistic wellbeing practices' },
-  { id: 'community', sanskrit: 'समाज', english: 'Community', description: 'Service to society' }
+  { 
+    id: 'family', 
+    sanskrit: 'कुटुम्ब', 
+    hindi: 'कुटुम्ब',
+    bengali: 'কুটুম্ব',
+    english: 'Family', 
+    description: { en: 'Nurturing family bonds and values', hi: 'पारिवारिक बंधनों और मूल्यों का पोषण', bn: 'পারিবারিক বন্ধন এবং মূল্যবোধের লালনপালন' } 
+  },
+  { 
+    id: 'ecology', 
+    sanskrit: 'पर्यावरण', 
+    hindi: 'पर्यावरण',
+    bengali: 'পরিবেশ',
+    english: 'Ecology', 
+    description: { en: 'Environmental stewardship and respect for nature', hi: 'पर्यावरण प्रबंधन और प्रकृति के प्रति सम्मान', bn: 'পরিবেশগত স্টুয়ার্ডশিপ এবং প্রকৃতির প্রতি শ্রদ্ধা' } 
+  },
+  { 
+    id: 'education', 
+    sanskrit: 'शिक्षा', 
+    hindi: 'शिक्षा',
+    bengali: 'শিক্ষা',
+    english: 'Education', 
+    description: { en: 'Spreading knowledge and wisdom', hi: 'ज्ञान और बुद्धिमत्ता का प्रसार', bn: 'জ্ঞান ও প্রজ্ঞা বিস্তার' } 
+  },
+  { 
+    id: 'health', 
+    sanskrit: 'आरोग्य', 
+    hindi: 'आरोग्य',
+    bengali: 'আরোগ্য',
+    english: 'Health', 
+    description: { en: 'Holistic wellbeing practices', hi: 'समग्र कल्याण प्रथाएँ', bn: 'সামগ্রিক সুস্থতা অনুশীলন' } 
+  },
+  { 
+    id: 'community', 
+    sanskrit: 'समाज', 
+    hindi: 'समाज',
+    bengali: 'সমাজ',
+    english: 'Community', 
+    description: { en: 'Service to society', hi: 'समाज की सेवा', bn: 'সমাজের সেবা' } 
+  }
 ]
