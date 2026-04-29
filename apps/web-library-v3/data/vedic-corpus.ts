@@ -15,6 +15,7 @@ export const vedicCorpusTree: TreeNode[] = [
     name: 'Shruti',
     sanskrit: 'श्रुति',
     bengali: 'শ্রুতি',
+    marathi: 'श्रुती',
     type: 'corpus',
     children: [
       {
@@ -22,6 +23,7 @@ export const vedicCorpusTree: TreeNode[] = [
         name: 'Vedas',
         sanskrit: 'वेद',
         bengali: 'বেদ',
+        marathi: 'वेद',
         type: 'text_group',
         children: [
           {
@@ -65,6 +67,7 @@ export const vedicCorpusTree: TreeNode[] = [
         name: 'Upanisads',
         sanskrit: 'उपनिषद्',
         bengali: 'উপনিষদ',
+        marathi: 'उपनिषद',
         type: 'text_group',
         children: [
           { id: 'isha', name: 'Isha Upanisad', sanskrit: 'ईशोपनिषद्', type: 'work', verseCount: 18, children: generateVerseNodes('isha', 18) },
@@ -86,6 +89,7 @@ export const vedicCorpusTree: TreeNode[] = [
     name: 'Smrti',
     sanskrit: 'स्मृति',
     bengali: 'স্মৃতি',
+    marathi: 'स्मृती',
     type: 'corpus',
     children: [
       {
@@ -93,6 +97,7 @@ export const vedicCorpusTree: TreeNode[] = [
         name: 'Itihasa',
         sanskrit: 'इतिहास',
         bengali: 'ইতিহাস',
+        marathi: 'इतिहास',
         type: 'text_group',
         children: [
           {
@@ -100,6 +105,7 @@ export const vedicCorpusTree: TreeNode[] = [
             name: 'Mahabharata',
             sanskrit: 'महाभारत',
             bengali: 'মহাভারত',
+            marathi: 'महाभारत',
             type: 'work',
             verseCount: 100000,
             children: [
@@ -108,6 +114,7 @@ export const vedicCorpusTree: TreeNode[] = [
                 name: 'Bhisma Parva',
                 sanskrit: 'भीष्म पर्व',
                 bengali: 'ভীষ্ম পর্ব',
+                marathi: 'भीष्म पर्व',
                 type: 'section',
                 children: [
                   {
@@ -115,6 +122,7 @@ export const vedicCorpusTree: TreeNode[] = [
                     name: 'Bhagavad Gita',
                     sanskrit: 'भगवद्गीता',
                     bengali: 'ভগবদ্গীতা',
+                    marathi: 'भगवद्गीता',
                     type: 'work',
                     verseCount: 700,
                     children: [
@@ -124,6 +132,7 @@ export const vedicCorpusTree: TreeNode[] = [
                         sanskrit: 'अर्जुन विषाद योग', 
                         hindi: 'अध्याय 1: अर्जुन विषाद योग',
                         bengali: 'অধ্যায় ১: অর্জুন বিষাদ যোগ',
+                        marathi: 'अध्याय १: अर्जुन विषाद योग',
                         type: 'chapter', 
                         verseCount: 47, 
                         children: generateVerseNodes('bg-1', 47) 
@@ -134,6 +143,7 @@ export const vedicCorpusTree: TreeNode[] = [
                         sanskrit: 'सांख्य योग', 
                         hindi: 'अध्याय 2: सांख्य योग',
                         bengali: 'অধ্যায় ২: সাংখ্য যোগ',
+                        marathi: 'अध्याय २: सांख्य योग',
                         type: 'chapter', 
                         verseCount: 72, 
                         children: generateVerseNodes('bg-2', 72) 
@@ -236,7 +246,8 @@ export const sampleVerse: Verse = {
   summary: {
     en: 'Focus on action, not the fruits of action',
     hi: 'कर्म पर ध्यान दें, फल पर नहीं',
-    bn: 'কর্মে মনোনিবেশ করুন, ফলে নয়'
+    bn: 'কর্মে মনোনিবেশ করুন, ফলে নয়',
+    mr: 'कर्मावर लक्ष केंद्रित करा, फळावर नाही'
   },
   sanskrit: 'कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।\nमा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥ ४७ ॥',
   transliteration: 'karmany evadhikaras te ma phalesu kadacana\nma karma-phala-hetur bhur ma te sango \'stv akarmani',
@@ -262,7 +273,8 @@ export const sampleVerse: Verse = {
     en: 'You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself to be the cause of the results of your activities, nor be attached to inaction.',
     hi: 'तुम्हें केवल कर्म करने का अधिकार है, फल पर कभी नहीं। कर्मफल का कारण मत बनो और कर्म न करने में भी आसक्त मत हो।',
     sa: 'कर्मण्येव अधिकारः ते, न फলেषु कदाचन। मा कर्मफलहेतुः भूः, मा ते सङ्गोऽस्तु अकर्मणि।',
-    bn: 'তোমার শুধুমাত্র কর্মেই অধিকার আছে, ফলে কখনও নয়। কর্মফলের কারণ হয়ো না এবং অকর্মণ্যতায়ও আসক্ত হয়ো না।'
+    bn: 'তোমার শুধুমাত্র কর্মেই অধিকার আছে, ফলে কখনও নয়। কর্মফলের কারণ হয়ো না এবং অকর্মণ্যতায়ও আসক্ত হয়ো না।',
+    mr: 'तुला केवळ कर्म करण्याचा अधिकार आहे, फळावर कधीही नाही. कर्मफलाचे कारण होऊ नकोस आणि अकर्मण्यतेतही आसक्त होऊ नकोस.'
   },
   commentaries: [
     {
@@ -319,11 +331,12 @@ export const sampleVerse: Verse = {
 export const sampleCourses: Course[] = [
   {
     id: 'intro-gita',
-    title: { en: 'Introduction to Bhagavad Gita', hi: 'भगवद्गीता परिचय', bn: 'ভগবদ্গীতা পরিচিতি' },
+    title: { en: 'Introduction to Bhagavad Gita', hi: 'भगवद्गीता परिचय', bn: 'ভগবদ্গীতা পরিচিতি', mr: 'भगवद्गीता परिचय' },
     description: { 
       en: 'A foundational course exploring the timeless wisdom of the Gita for modern life.',
       hi: 'आधुनिक जीवन के लिए गीता के शाश्वत ज्ञान की खोज करने वाला एक आधारभूत पाठ्यक्रम।',
-      bn: 'আধুনিক জীবনের জন্য গীতার কালজয়ী জ্ঞান অন্বেষণকারী একটি মৌলিক কোর্স।'
+      bn: 'আধুনিক জীবনের জন্য গীতার কালজয়ী জ্ঞান অন্বেষণকারী একটি মৌলিক কোর্স।',
+      mr: 'आधुनिक जीवनासाठी गीतेच्या शाश्वत ज्ञानाचा शोध घेणारा एक पायाभूत अभ्यासक्रम.'
     },
     level: 'beginner',
     ageGroups: ['students', 'professionals'],
@@ -331,11 +344,12 @@ export const sampleCourses: Course[] = [
   },
   {
     id: 'karma-yoga-deep',
-    title: { en: 'Karma Yoga: Path of Action', hi: 'कर्म योग: कर्म का मार्ग', bn: 'কর্মযোগ: কর্মের পথ' },
+    title: { en: 'Karma Yoga: Path of Action', hi: 'कर्म योग: कर्म का मार्ग', bn: 'কর্মযোগ: কর্মের পথ', mr: 'कर्मयोग: कर्माचा मार्ग' },
     description: { 
       en: 'Deep dive into the philosophy of selfless action and its practical application.',
       hi: 'निःस्वार्थ कर्म के दर्शन और उसके व्यावहारिक अनुप्रयोग का गहरा अध्ययन।',
-      bn: 'নিঃস্বার্থ কর্মের দর্শন এবং এর ব্যবহারিক প্রয়োগের গভীর আলোচনা।'
+      bn: 'নিঃস্বার্থ কর্মের দর্শন এবং এর ব্যবহারিক প্রয়োগের গভীর আলোচনা।',
+      mr: 'निःस्वार्थ कर्माचे तत्त्वज्ञान आणि त्याचे व्यावहारिक उपयोग यांचा सखोल अभ्यास.'
     },
     level: 'intermediate',
     ageGroups: ['professionals', 'elders'],
@@ -343,11 +357,12 @@ export const sampleCourses: Course[] = [
   },
   {
     id: 'gita-for-kids',
-    title: { en: 'Gita Stories for Kids', hi: 'बच्चों के लिए गीता की कहानियाँ', bn: 'শিশুদের জন্য গীতার গল্প' },
+    title: { en: 'Gita Stories for Kids', hi: 'बच्चों के लिए गीता की कहानियाँ', bn: 'শিশুদের জন্য গীতার গল্প', mr: 'मुलांसाठी गीतेतील गोष्टी' },
     description: { 
       en: 'Simplified teachings through engaging stories and activities.',
       hi: 'आकर्षक कहानियों और गतिविधियों के माध्यम से सरल शिक्षाएँ।',
-      bn: 'আকর্ষণীয় গল্প এবং ক্রিয়াকলাপের মাধ্যমে সরল শিক্ষা।'
+      bn: 'আকর্ষণীয় গল্প এবং ক্রিয়াকলাপের মাধ্যমে সরল শিক্ষা।',
+      mr: 'आकर्षक गोष्टी आणि उपक्रमांद्वारे सोपी शिकवण.'
     },
     level: 'beginner',
     ageGroups: ['kids'],
@@ -359,15 +374,25 @@ export const sampleCourses: Course[] = [
 export const sampleGuidance: GuidanceTopic[] = [
   { 
     id: 'stress', 
-    title: { en: 'Managing Stress', hi: 'तनाव प्रबंधन', bn: 'মানসিক চাপ ব্যবস্থাপনা' }, 
+    title: { en: 'Managing Stress', hi: 'तनाव प्रबंधन', bn: 'মানসিক চাপ ব্যবস্থাপনা', mr: 'तणाव व्यवस्थापन' }, 
     category: 'Mental Health', 
-    description: { en: 'Vedic wisdom for finding peace amid chaos', hi: 'अशांति के बीच शांति खोजने के लिए वैदिक ज्ञान', bn: 'অশান্তির মধ্যে শান্তি খোঁজার জন্য বৈদিক জ্ঞান' } 
+    description: { 
+      en: 'Vedic wisdom for finding peace amid chaos', 
+      hi: 'अशांति के बीच शांति खोजने के लिए वैदिक ज्ञान', 
+      bn: 'অশান্তির মধ্যে শান্তি খোঁজার জন্য বৈদিক জ্ঞান',
+      mr: 'अशांततेत शांतता शोधण्यासाठी वैदिक ज्ञान'
+    } 
   },
   { 
     id: 'decision', 
-    title: { en: 'Making Decisions', hi: 'निर्णय लेना', bn: 'সিদ্ধান্ত গ্রহণ' }, 
+    title: { en: 'Making Decisions', hi: 'निर्णय लेना', bn: 'সিদ্ধান্ত গ্রহণ', mr: 'निर्णय घेणे' }, 
     category: 'Life Skills', 
-    description: { en: 'Using dharmic principles for clear choices', hi: 'स्पष्ट विकल्पों के लिए धार्मिक सिद्धांतों का उपयोग करना', bn: 'স্পষ্ট পছন্দের জন্য ধার্মিক নীতির ব্যবহার' } 
+    description: { 
+      en: 'Using dharmic principles for clear choices', 
+      hi: 'स्पष्ट विकल्पों के लिए धार्मिक सिद्धांतों का उपयोग करना', 
+      bn: ' স্পষ্ট পছন্দের জন্য ধার্মিক নীতির ব্যবহার',
+      mr: 'स्पष्ट निवडीसाठी धार्मिक तत्त्वांचा वापर करणे'
+    } 
   },
   { 
     id: 'relationships', 
@@ -390,39 +415,69 @@ export const sevaDomains: SevaDomain[] = [
     sanskrit: 'कुटुम्ब', 
     hindi: 'कुटुम्ब',
     bengali: 'কুটুম্ব',
+    marathi: 'कुटुंब',
     english: 'Family', 
-    description: { en: 'Nurturing family bonds and values', hi: 'पारिवारिक बंधनों और मूल्यों का पोषण', bn: 'পারিবারিক বন্ধন এবং মূল্যবোধের লালনপালন' } 
+    description: { 
+      en: 'Nurturing family bonds and values', 
+      hi: 'पारिवारिक बंधनों और मूल्यों का पोषण', 
+      bn: 'পারিবারিক বন্ধন এবং মূল্যবোধের লালনপালন',
+      mr: 'कौटुंबिक बंध आणि मूल्ये जोपासणे'
+    } 
   },
   { 
     id: 'ecology', 
     sanskrit: 'पर्यावरण', 
     hindi: 'पर्यावरण',
     bengali: 'পরিবেশ',
+    marathi: 'पर्यावरण',
     english: 'Ecology', 
-    description: { en: 'Environmental stewardship and respect for nature', hi: 'पर्यावरण प्रबंधन और प्रकृति के प्रति सम्मान', bn: 'পরিবেশগত স্টুয়ার্ডশিপ এবং প্রকৃতির প্রতি শ্রদ্ধা' } 
+    description: { 
+      en: 'Environmental stewardship and respect for nature', 
+      hi: 'पर्यावरण प्रबंधन और प्रकृति के प्रति सम्मान', 
+      bn: 'পরিবেশগত স্টুয়ার্ডশিপ এবং প্রকৃতির প্রতি শ্রদ্ধা',
+      mr: 'पर्यावरण व्यवस्थापन आणि निसर्गाप्रती आदर'
+    } 
   },
   { 
     id: 'education', 
     sanskrit: 'शिक्षा', 
     hindi: 'शिक्षा',
     bengali: 'শিক্ষা',
+    marathi: 'शिक्षण',
     english: 'Education', 
-    description: { en: 'Spreading knowledge and wisdom', hi: 'ज्ञान और बुद्धिमत्ता का प्रसार', bn: 'জ্ঞান ও প্রজ্ঞা বিস্তার' } 
+    description: { 
+      en: 'Spreading knowledge and wisdom', 
+      hi: 'ज्ञान और बुद्धिमत्ता का प्रसार', 
+      bn: 'জ্ঞান ও প্রজ্ঞা বিস্তার',
+      mr: 'ज्ञान आणि शहाणपणाचा प्रसार'
+    } 
   },
   { 
     id: 'health', 
     sanskrit: 'आरोग्य', 
     hindi: 'आरोग्य',
     bengali: 'আরোগ্য',
+    marathi: 'आरोग्य',
     english: 'Health', 
-    description: { en: 'Holistic wellbeing practices', hi: 'समग्र कल्याण प्रथाएँ', bn: 'সামগ্রিক সুস্থতা অনুশীলন' } 
+    description: { 
+      en: 'Holistic wellbeing practices', 
+      hi: 'समग्र कल्याण प्रथाएँ', 
+      bn: 'সামগ্রিক সুস্থতা অনুশীলন',
+      mr: 'समग्र कल्याण पद्धती'
+    } 
   },
   { 
     id: 'community', 
     sanskrit: 'समाज', 
     hindi: 'समाज',
     bengali: 'সমাজ',
+    marathi: 'समाज',
     english: 'Community', 
-    description: { en: 'Service to society', hi: 'समाज की सेवा', bn: 'সমাজের সেবা' } 
+    description: { 
+      en: 'Service to society', 
+      hi: 'समाज की सेवा', 
+      bn: '社会的 সেবা',
+      mr: 'समाजाची सेवा'
+    } 
   }
 ]

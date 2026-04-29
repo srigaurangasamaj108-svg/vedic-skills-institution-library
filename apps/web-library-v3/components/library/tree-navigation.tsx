@@ -48,6 +48,8 @@ function TreeNodeComponent({ node, level, parentPath = '' }: TreeNodeComponentPr
     ? (node.hindi || node.sanskrit || node.name) 
     : language === 'bn'
     ? (node.bengali || node.sanskrit || node.name)
+    : language === 'mr'
+    ? (node.marathi || node.sanskrit || node.name)
     : node.name
   
   const handleToggle = useCallback((e: React.MouseEvent) => {

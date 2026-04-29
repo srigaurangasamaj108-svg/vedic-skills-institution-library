@@ -71,7 +71,8 @@ export function LibraryLayout({ children }: LibraryLayoutProps) {
       name: node.name,
       sanskrit: node.sanskrit,
       hindi: node.hindi,
-      bengali: node.bengali
+      bengali: node.bengali,
+      marathi: node.marathi
     })) || []
   }, [currentNodeId, tree])
 

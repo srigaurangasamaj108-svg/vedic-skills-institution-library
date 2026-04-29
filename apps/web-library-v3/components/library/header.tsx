@@ -47,7 +47,8 @@ export function Header({ className }: HeaderProps) {
     en: 'English',
     hi: 'हिन्दी',
     sa: 'संस्कृतम्',
-    bn: 'বাংলা'
+    bn: 'বাংলা',
+    mr: 'मराठी'
   }
 
   return (

@@ -10,6 +10,7 @@ interface BreadcrumbItem {
   sanskrit?: string
   hindi?: string
   bengali?: string
+  marathi?: string
 }
 
 interface BreadcrumbProps {
@@ -46,6 +47,8 @@ export function Breadcrumb({ items, onNavigate, className }: BreadcrumbProps) {
           ? (item.hindi || item.sanskrit || item.name)
           : language === 'bn'
           ? (item.bengali || item.sanskrit || item.name)
+          : language === 'mr'
+          ? (item.marathi || item.sanskrit || item.name)
           : item.name
 
         return (
