@@ -20,6 +20,7 @@ type ScriptType = 'devanagari' | 'iast' | 'telugu'
 type MeaningLanguage = 'sa' | 'hi' | 'en' | 'te'
 
 function VerseHeader({ verse }: { verse: Verse }) {
+  const { language } = useAppStore()
   const { t } = useTranslation()
   return (
     <div className="border-b border-border pb-4 mb-4">
@@ -56,6 +57,7 @@ function VerseHeader({ verse }: { verse: Verse }) {
 function VerseSection({ verse }: { verse: Verse }) {
   const [isOpen, setIsOpen] = useState(true)
   const [script, setScript] = useState<ScriptType>('devanagari')
+  const { language } = useAppStore()
   const { t } = useTranslation()
   
   const getVerseText = () => {
