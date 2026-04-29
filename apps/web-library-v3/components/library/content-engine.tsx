@@ -17,7 +17,7 @@ interface ContentEngineProps {
 }
 
 type ScriptType = 'devanagari' | 'iast' | 'telugu'
-type MeaningLanguage = 'sa' | 'hi' | 'en' | 'te'
+type MeaningLanguage = 'sa' | 'hi' | 'en' | 'bn' | 'mr' | 'te'
 
 function VerseHeader({ verse }: { verse: Verse }) {
   const { language } = useAppStore()
@@ -171,19 +171,19 @@ function MeaningSection({ verse }: { verse: Verse }) {
         </div>
         
         {/* Language Selection */}
-        <div className="flex border-b border-border" style={{ backgroundColor: 'var(--knowledge-blue)' }}>
-          {(['sa', 'hi', 'en', 'te'] as MeaningLanguage[]).map((lang) => (
+        <div className="flex border-b border-border overflow-x-auto" style={{ backgroundColor: 'var(--knowledge-blue)' }}>
+          {(['sa', 'hi', 'bn', 'mr', 'en', 'te'] as MeaningLanguage[]).map((lang) => (
             <button
               key={lang}
               onClick={() => setLanguage(lang)}
               className={cn(
-                "px-4 py-2 text-sm font-medium transition-colors",
+                "px-4 py-2 text-sm font-medium transition-colors whitespace-nowrap",
                 language === lang 
-                  ? "bg-white/20 text-white" 
+                  ? "bg-white/20 text-white border-b-2 border-white" 
                   : "text-white/70 hover:text-white hover:bg-white/10"
               )}
             >
-              {lang === 'sa' ? t('sanskrit') : lang === 'hi' ? t('hindi') : lang === 'en' ? t('english') : 'Telugu'}
+              {lang === 'sa' ? t('sanskrit') : lang === 'hi' ? t('hindi') : lang === 'bn' ? t('bengali') : lang === 'mr' ? t('marathi') : lang === 'en' ? t('english') : 'Telugu'}
             </button>
           ))}
         </div>
@@ -216,7 +216,9 @@ function MeaningSection({ verse }: { verse: Verse }) {
               <p className="text-foreground/90 leading-relaxed">
                 {language === 'en' && "Your right is to action alone, never to the fruits at any time. Do not be the cause of the fruit of action, nor let there be attachment in you to inaction."}
                 {language === 'hi' && "तुम्हारा अधिकार केवल कर्म में है, फल में कभी नहीं। कर्मफल का कारण मत बनो, और न ही अकर्म में आसक्त रहो।"}
-                {language === 'sa' && verse.translations.sa || "कर्मण्येव अधिकारः ते, न फलेषु कदाचन। मा कर्मफलहेतुः भूः, मा ते सङ्गोऽस्तु अकर्मणि।"}
+                {language === 'bn' && "তোমার শুধুমাত্র কর্মেই অধিকার আছে, ফলে কখনও নয়। কর্মফলের কারণ হয়ো না এবং অকর্মণ্যতায়ও আসক্ত হয়ো না।"}
+                {language === 'mr' && "तुला केवळ कर्म करण्याचा अधिकार आहे, फळावर कधीही नाही. कर्मफलाचे कारण होऊ नकोस आणि अकर्मण्यतेतही आसक्त होऊ नकोस."}
+                {language === 'sa' && (verse.translations.sa || "कर्मण्येव अधिकारः ते, न फलेषु कदाचन। मा कर्मफलहेतुः भूः, मा ते सङ्गोऽस्तु अकर्मणि।")}
                 {language === 'te' && "మీ హక్కు కర్మలో మాత్రమే, ఫలంలో ఎప్పటికీ కాదు."}
               </p>
               <Button variant="ghost" size="icon" className="shrink-0 h-8 w-8">

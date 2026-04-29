@@ -291,7 +291,9 @@ export const sampleVerse: Verse = {
       author: 'Srila Prabhupada',
       content: {
         en: 'The Bhagavad-gita here establishes the science of devotional service. One should act in Krishna consciousness for the satisfaction of Krishna. The fruits of all activities should be given to the Supreme Lord. This is called nishkama-karma, or action without fruitive desire.',
-        hi: 'भगवद्गीता यहाँ भक्ति सेवा के विज्ञान को स्थापित करती है।'
+        hi: 'भगवद्गीता यहाँ भक्ति सेवा के विज्ञान को स्थापित करती है।',
+        bn: 'ভগবদ্গীতা এখানে ভক্তিমূলক সেবার বিজ্ঞান প্রতিষ্ঠা করে।',
+        mr: 'भगवद्गीता येथे भक्तिसेवेचे विज्ञान प्रस्थापित करते.'
       }
     },
     {
@@ -299,7 +301,9 @@ export const sampleVerse: Verse = {
       author: 'Shankaracharya',
       content: {
         en: 'The Self is eternally free and actionless. Actions belong to the body-mind complex, not to the Atman. By renouncing the sense of doership and the desire for fruits, one realizes the non-dual nature of Brahman.',
-        hi: 'आत्मा शाश्वत रूप से मुक्त और निष्क्रिय है।'
+        hi: 'आत्मा शाश्वत रूप से मुक्त और निष्क्रिय है।',
+        bn: 'আত্মা শাশ্বতভাবে মুক্ত এবং কর্মহীন।',
+        mr: 'आत्मा शाश्वतपणे मुक्त आणि निष्क्रिय आहे.'
       }
     },
     {
@@ -307,7 +311,9 @@ export const sampleVerse: Verse = {
       author: 'Madhvacharya',
       content: {
         en: 'This verse teaches that while performing karma according to one\'s svadharma, one should offer all results to the Supreme Lord Vishnu. The Lord alone is the giver of all fruits, and recognizing this leads to liberation.',
-        hi: 'यह श्लोक सिखाता है कि स्वधर्म के अनुसार कर्म करते हुए, सभी फल भगवान विष्णु को अर्पित करने चाहिए।'
+        hi: 'यह श्लोक सिखाता है कि स्वधर्म के अनुसार कर्म करते हुए, सभी फल भगवान विष्णु को अर्पित करने चाहिए।',
+        bn: 'এই শ্লোকটি শেখায় যে নিজের স্বধর্ম অনুযায়ী কর্ম করার সময় সমস্ত ফল পরমেশ্বর ভগবান বিষ্ণুকে অর্পণ করা উচিত।',
+        mr: 'हा श्लोक शिकवतो की स्वतःच्या स्वधर्मानुसार कर्म करताना सर्व फळे भगवान विष्णूंना अर्पण करावीत.'
       }
     },
     {
@@ -315,7 +321,9 @@ export const sampleVerse: Verse = {
       author: 'Ramanujacharya',
       content: {
         en: 'Actions performed with devotion to Narayana, without selfish desire, purify the heart and lead to moksha. The Supreme Lord is both the means and the end of all spiritual practice.',
-        hi: 'नारायण के प्रति भक्ति से किए गए कर्म, बिना स्वार्थी इच्छा के, हृदय को शुद्ध करते हैं और मोक्ष की ओर ले जाते हैं।'
+        hi: 'नारायण के प्रति भक्ति से किए गए कर्म, बिना स्वार्थी इच्छा के, हृदय को शुद्ध करते हैं और मोक्ष की ओर ले जाते हैं।',
+        bn: 'নারায়ণের প্রতি ভক্তি সহকারে কৃত কর্ম হৃদয়কে শুদ্ধ করে এবং মোক্ষের দিকে নিয়ে যায়।',
+        mr: 'नारायणाच्या भक्तीने केलेले कर्म हृदय शुद्ध करते आणि मोक्षाकडे नेते.'
       }
     }
   ],
