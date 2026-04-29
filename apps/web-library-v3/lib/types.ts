@@ -5,6 +5,7 @@ export type TreeNode = {
   name: string
   sanskrit?: string
   hindi?: string
+  bengali?: string
   type: 'corpus' | 'text_group' | 'section' | 'work' | 'chapter' | 'verse'
   children?: TreeNode[]
   verseCount?: number
@@ -74,7 +75,7 @@ export type SevaDomain = {
 
 export type AgeGroup = 'kids' | 'students' | 'professionals' | 'elders'
 export type Category = 'dharma' | 'vedanta' | 'yoga' | 'ayurveda' | 'jyotish' | 'nyaya'
-export type Language = 'en' | 'hi' | 'sa'
+export type Language = 'en' | 'hi' | 'sa' | 'bn'
 
 export type Filters = {
   ageGroup?: AgeGroup

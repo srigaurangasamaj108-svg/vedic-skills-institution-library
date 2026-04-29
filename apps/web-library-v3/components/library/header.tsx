@@ -46,7 +46,8 @@ export function Header({ className }: HeaderProps) {
   const languageLabels: Record<Language, string> = {
     en: 'English',
     hi: 'हिन्दी',
-    sa: 'संस्कृतम्'
+    sa: 'संस्कृतम्',
+    bn: 'বাংলা'
   }
 
   return (

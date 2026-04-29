@@ -14,18 +14,21 @@ export const vedicCorpusTree: TreeNode[] = [
     id: 'shruti',
     name: 'Shruti',
     sanskrit: 'श्रुति',
+    bengali: 'শ্রুতি',
     type: 'corpus',
     children: [
       {
         id: 'vedas',
         name: 'Vedas',
         sanskrit: 'वेद',
+        bengali: 'বেদ',
         type: 'text_group',
         children: [
           {
             id: 'rigveda',
             name: 'Rgveda',
             sanskrit: 'ऋग्वेद',
+            bengali: 'ঋগ্বেদ',
             type: 'work',
             verseCount: 10552,
             children: [
@@ -106,6 +109,7 @@ export const vedicCorpusTree: TreeNode[] = [
                     id: 'bhagavad-gita',
                     name: 'Bhagavad Gita',
                     sanskrit: 'भगवद्गीता',
+                    bengali: 'ভগবদ্গীতা',
                     type: 'work',
                     verseCount: 700,
                     children: [

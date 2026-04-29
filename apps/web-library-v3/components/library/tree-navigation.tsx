@@ -46,6 +46,8 @@ function TreeNodeComponent({ node, level, parentPath = '' }: TreeNodeComponentPr
   // Choose the name based on language
   const displayName = language === 'hi' 
     ? (node.hindi || node.sanskrit || node.name) 
+    : language === 'bn'
+    ? (node.bengali || node.sanskrit || node.name)
     : node.name
   
   const handleToggle = useCallback((e: React.MouseEvent) => {
