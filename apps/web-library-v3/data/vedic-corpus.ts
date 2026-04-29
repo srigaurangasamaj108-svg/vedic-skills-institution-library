@@ -64,6 +64,7 @@ export const vedicCorpusTree: TreeNode[] = [
         id: 'upanishads',
         name: 'Upanisads',
         sanskrit: 'उपनिषद्',
+        bengali: 'উপনিষদ',
         type: 'text_group',
         children: [
           { id: 'isha', name: 'Isha Upanisad', sanskrit: 'ईशोपनिषद्', type: 'work', verseCount: 18, children: generateVerseNodes('isha', 18) },
@@ -84,18 +85,21 @@ export const vedicCorpusTree: TreeNode[] = [
     id: 'smriti',
     name: 'Smrti',
     sanskrit: 'स्मृति',
+    bengali: 'স্মৃতি',
     type: 'corpus',
     children: [
       {
         id: 'itihasa',
         name: 'Itihasa',
         sanskrit: 'इतिहास',
+        bengali: 'ইতিহাস',
         type: 'text_group',
         children: [
           {
             id: 'mahabharata',
             name: 'Mahabharata',
             sanskrit: 'महाभारत',
+            bengali: 'মহাভারত',
             type: 'work',
             verseCount: 100000,
             children: [
@@ -103,6 +107,7 @@ export const vedicCorpusTree: TreeNode[] = [
                 id: 'bhisma-parva',
                 name: 'Bhisma Parva',
                 sanskrit: 'भीष्म पर्व',
+                bengali: 'ভীষ্ম পর্ব',
                 type: 'section',
                 children: [
                   {
@@ -210,6 +215,11 @@ export const sampleVerse: Verse = {
   id: 'bg-2-47',
   chapter: 2,
   verse: 47,
+  summary: {
+    en: 'Focus on action, not the fruits of action',
+    hi: 'कर्म पर ध्यान दें, फल पर नहीं',
+    bn: 'কর্মে মনোনিবেশ করুন, ফলে নয়'
+  },
   sanskrit: 'कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।\nमा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥ ४७ ॥',
   transliteration: 'karmany evadhikaras te ma phalesu kadacana\nma karma-phala-hetur bhur ma te sango \'stv akarmani',
   synonyms: [
@@ -233,15 +243,16 @@ export const sampleVerse: Verse = {
   translations: {
     en: 'You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself to be the cause of the results of your activities, nor be attached to inaction.',
     hi: 'तुम्हें केवल कर्म करने का अधिकार है, फल पर कभी नहीं। कर्मफल का कारण मत बनो और कर्म न करने में भी आसक्त मत हो।',
-    sa: 'कर्मण्येव अधिकारः ते, न फलेषु कदाचन। मा कर्मफलहेतुः भूः, मा ते सङ्गोऽस्तु अकर्मणि।'
+    sa: 'कर्मण्येव अधिकारः ते, न फলেषु कदाचन। मा कर्मफलहेतुः भूः, मा ते सङ्गोऽस्तु अकर्मणि।',
+    bn: 'তোমার শুধুমাত্র কর্মেই অধিকার আছে, ফলে কখনও নয়। কর্মফলের কারণ হয়ো না এবং অকর্মণ্যতায়ও আসক্ত হয়ো না।'
   },
   commentaries: [
     {
       sampradaya: 'general',
       author: 'General Commentary',
-      content: {
         en: 'This verse is one of the most famous and frequently quoted verses of the Bhagavad Gita. It encapsulates the essence of Karma Yoga - the path of selfless action. Krishna instructs Arjuna that one should focus entirely on performing one\'s duty without attachment to the results. This teaching encourages action without selfish motivation, leading to inner peace and spiritual growth.',
-        hi: 'यह श्लोक भगवद्गीता के सबसे प्रसिद्ध और उद्धृत श्लोकों में से एक है। यह कर्म योग के सार को समाहित करता है - निःस्वार्थ कर्म का मार्ग।'
+        hi: 'यह श्लोक भगवद्गीता के सबसे प्रसिद्ध और उद्धृत श্লোकों में से एक है। यह कर्म योग के सार को समाहित करता है - निःस्वार्थ कर्म का मार्ग।',
+        bn: 'এই শ্লোকটি ভগবদ্গীতার সবচেয়ে বিখ্যাত এবং প্রায়শই উদ্ধৃত শ্লোকগুলির মধ্যে একটি। এটি কর্মযোগের সারমর্মকে ধারণ করে - নিঃস্বার্থ কর্মের পথ।'
       }
     },
     {

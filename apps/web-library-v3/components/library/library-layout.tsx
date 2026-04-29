@@ -69,7 +69,9 @@ export function LibraryLayout({ children }: LibraryLayoutProps) {
     return path?.map(node => ({
       id: node.id,
       name: node.name,
-      sanskrit: node.sanskrit
+      sanskrit: node.sanskrit,
+      hindi: node.hindi,
+      bengali: node.bengali
     })) || []
   }, [currentNodeId, tree])
 

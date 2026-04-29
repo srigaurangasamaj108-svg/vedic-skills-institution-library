@@ -46,7 +46,7 @@ function VerseHeader({ verse }: { verse: Verse }) {
       {/* Summary Theme */}
       <div className="text-center">
         <p className="text-sm italic text-muted-foreground">
-          Focus on action, not the fruits of action
+          {verse.summary?.[language as keyof typeof verse.summary] || verse.summary?.en}
         </p>
       </div>
     </div>
@@ -87,7 +87,9 @@ function VerseSection({ verse }: { verse: Verse }) {
               <Volume2 className="w-4 h-4" />
             </Button>
           </div>
-          <span className="text-sm text-muted-foreground font-serif">Anushtup Chhandas</span>
+          <span className="text-sm text-muted-foreground font-serif">
+            {language === 'hi' ? 'अनुष्टुप छन्द' : language === 'bn' ? 'অনুষ্টুপ ছন্দ' : 'Anushtup Chhandas'}
+          </span>
         </div>
       </CollapsibleTrigger>
       
@@ -127,7 +129,8 @@ function VerseSection({ verse }: { verse: Verse }) {
 function MeaningSection({ verse }: { verse: Verse }) {
   const [isOpen, setIsOpen] = useState(true)
   const [activeTab, setActiveTab] = useState<'segmentation' | 'word-meaning' | 'prose-order' | 'prose-meaning'>('word-meaning')
-  const [language, setLanguage] = useState<MeaningLanguage>('en')
+  const { language: globalLanguage } = useAppStore()
+  const [language, setLanguage] = useState<MeaningLanguage>(globalLanguage as any)
   const { t } = useTranslation()
   
   return (
@@ -267,11 +270,11 @@ function CommentarySection({ verse }: { verse: Verse }) {
   const { t } = useTranslation()
   
   const sampradayaLabels: Record<string, string> = {
-    general: 'General',
-    gaudiya: 'Gaudiya',
-    advaita: 'Advaita',
-    madhva: 'Madhva',
-    sri_vaishnava: 'Sri Vaishnava'
+    general: t('general_commentary'),
+    gaudiya: t('gaudiya'),
+    advaita: t('advaita'),
+    madhva: t('madhva'),
+    sri_vaishnava: t('sri_vaishnava')
   }
   
   // Sub-commentaries for each sampradaya (sample data)

@@ -15,6 +15,7 @@ export type Verse = {
   id: string
   chapter: number
   verse: number
+  summary?: Record<string, string>
   sanskrit: string
   transliteration: string
   synonyms: Synonym[]

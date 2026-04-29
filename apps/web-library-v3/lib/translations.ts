@@ -71,6 +71,12 @@ export type TranslationKey =
   | 'life skills'
   | 'family'
   | 'self-discovery'
+  | 'transliteration'
+  | 'gaudiya'
+  | 'advaita'
+  | 'madhva'
+  | 'sri_vaishnava'
+  | 'general_commentary'
 
 export const translations: Record<string, Record<TranslationKey, string>> = {
   en: {
@@ -145,7 +151,13 @@ export const translations: Record<string, Record<TranslationKey, string>> = {
     'mental health': 'Mental Health',
     'life skills': 'Life Skills',
     family: 'Family',
-    'self-discovery': 'Self-Discovery'
+    'self-discovery': 'Self-Discovery',
+    transliteration: 'Transliteration',
+    gaudiya: 'Gauḍīya',
+    advaita: 'Advaita',
+    madhva: 'Madhva',
+    sri_vaishnava: 'Śrī Vaiṣṇava',
+    general_commentary: 'General Commentary'
   },
   hi: {
     nikhil: 'निखिल',
@@ -219,25 +231,45 @@ export const translations: Record<string, Record<TranslationKey, string>> = {
     'mental health': 'मानसिक स्वास्थ्य',
     'life skills': 'जीवन कौशल',
     family: 'परिवार',
-    'self-discovery': 'आत्म-खोज'
+    'self-discovery': 'आत्म-खोज',
+    transliteration: 'लिप्यंतरण',
+    gaudiya: 'गौड़ीय',
+    advaita: 'अद्वैत',
+    madhva: 'मध्व',
+    sri_vaishnava: 'श्री वैष्णव',
+    general_commentary: 'सामान्य व्याख्या'
   },
   bn: {
     nikhil: 'নিখিল',
-    apply: 'প্রয়োগ করুন',
+    knowledge_os: 'জ্ঞান অপারেটিং সিস্টেম',
+    vedic_library: 'বৈদিক পাঠাগার',
+    search_placeholder: 'শ্লোক, গ্রন্থ, বিষয় খুঁজুন...',
+    depth: 'গভীরতা',
     for: 'জন্য',
-    save: 'সংরক্ষণ করুন',
-    clear: 'সাফ করুন',
+    language: 'ভাষা',
+    navigate: 'নেভিগেট',
+    apply: 'প্রয়োগ করুন',
+    verse: 'শ্লোক',
+    word_analysis: 'শব্দ বিশ্লেষণ',
+    translation: 'অনুবাদ',
+    commentary: 'টীকা',
     my_reflections: 'আমার প্রতিফলন',
     recitation: 'আবৃত্তি',
-    related_verses: 'সম্পর্কিত শ্লোক',
-    cross_references: 'ক্রস রেফারেন্স',
-    courses: 'কোর্স',
     life_guidance: 'জীবন নির্দেশিকা',
     seva_domains: 'সেবা ক্ষেত্র',
-    vedic_library: 'বৈদিক পাঠাগার',
-    audience: 'শ্রোতা',
-    complexity: 'জটিলতা',
-    language: 'ভাষা',
+    cross_references: 'ক্রস রেফারেন্স',
+    courses: 'কোর্স',
+    save: 'সংরক্ষণ করুন',
+    clear: 'সাফ করুন',
+    prev: 'পূর্ববর্তী',
+    next: 'পরবর্তী',
+    devanagari: 'দেবনাগরী',
+    roman: 'রোমান',
+    telugu: 'তেলুগু',
+    simple: 'সরল',
+    moderate: 'মধ্যম',
+    advanced: 'উন্নত',
+    scholarly: 'পণ্ডিতসুলভ',
     general: 'সাধারণ',
     devotee: 'ভক্ত',
     non_devotee: 'অভক্ত',
@@ -279,6 +311,12 @@ export const translations: Record<string, Record<TranslationKey, string>> = {
     'mental health': 'মানসিক স্বাস্থ্য',
     'life skills': 'জীবন দক্ষতা',
     family: 'পরিবার',
-    'self-discovery': 'আত্ম-আবিষ্কার'
+    'self-discovery': 'আত্ম-আবিষ্কার',
+    transliteration: 'লিপ্যন্তর',
+    gaudiya: 'গৌড়ীয়',
+    advaita: 'অদ্বৈত',
+    madhva: 'মধ্ব',
+    sri_vaishnava: 'শ্রী বৈষ্ণব',
+    general_commentary: 'সাধারণ ব্যাখ্যা'
   }
 }
