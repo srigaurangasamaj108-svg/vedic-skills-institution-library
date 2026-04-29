@@ -123,6 +123,7 @@ function RelatedVersesSection({ verses }: { verses: string[] }) {
 }
 
 function CoursesSection({ courses }: { courses: Course[] }) {
+  const { language } = useAppStore()
   const { t } = useTranslation()
   if (!courses || courses.length === 0) return null
   
@@ -184,6 +185,7 @@ function CoursesSection({ courses }: { courses: Course[] }) {
 }
 
 function GuidanceSection({ topics }: { topics: GuidanceTopic[] }) {
+  const { language } = useAppStore()
   const { t } = useTranslation()
   if (!topics || topics.length === 0) return null
   
@@ -220,6 +222,7 @@ function GuidanceSection({ topics }: { topics: GuidanceTopic[] }) {
 }
 
 function SevaDomainSection({ domains }: { domains: SevaDomain[] }) {
+  const { language } = useAppStore()
   const { t } = useTranslation()
   if (!domains || domains.length === 0) return null
   
