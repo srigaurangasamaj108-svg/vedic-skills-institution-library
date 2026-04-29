@@ -250,6 +250,7 @@ export const sampleVerse: Verse = {
     {
       sampradaya: 'general',
       author: 'General Commentary',
+      content: {
         en: 'This verse is one of the most famous and frequently quoted verses of the Bhagavad Gita. It encapsulates the essence of Karma Yoga - the path of selfless action. Krishna instructs Arjuna that one should focus entirely on performing one\'s duty without attachment to the results. This teaching encourages action without selfish motivation, leading to inner peace and spiritual growth.',
         hi: 'यह श्लोक भगवद्गीता के सबसे प्रसिद्ध और उद्धृत श্লোकों में से एक है। यह कर्म योग के सार को समाहित करता है - निःस्वार्थ कर्म का मार्ग।',
         bn: 'এই শ্লোকটি ভগবদ্গীতার সবচেয়ে বিখ্যাত এবং প্রায়শই উদ্ধৃত শ্লোকগুলির মধ্যে একটি। এটি কর্মযোগের সারমর্মকে ধারণ করে - নিঃস্বার্থ কর্মের পথ।'
