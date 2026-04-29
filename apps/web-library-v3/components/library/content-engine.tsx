@@ -17,7 +17,7 @@ interface ContentEngineProps {
 }
 
 type ScriptType = 'devanagari' | 'iast' | 'telugu'
-type MeaningLanguage = 'sa' | 'hi' | 'en' | 'bn' | 'mr' | 'te'
+type MeaningLanguage = 'sa' | 'hi' | 'en' | 'bn' | 'mr' | 'te' | 'gu' | 'or' | 'kn'
 
 function VerseHeader({ verse }: { verse: Verse }) {
   const { language } = useAppStore()
@@ -97,19 +97,19 @@ function VerseSection({ verse }: { verse: Verse }) {
       
       <CollapsibleContent>
         {/* Script Selection Tabs */}
-        <div className="flex border-b border-border" style={{ backgroundColor: 'var(--knowledge-blue)' }}>
+        <div className="flex border-b border-border overflow-x-auto" style={{ backgroundColor: 'var(--knowledge-blue)' }}>
           {(['devanagari', 'iast', 'telugu'] as ScriptType[]).map((s) => (
             <button
               key={s}
               onClick={() => setScript(s)}
               className={cn(
-                "px-4 py-2 text-sm font-medium transition-colors",
+                "px-4 py-2 text-sm font-medium transition-colors whitespace-nowrap",
                 script === s 
-                  ? "bg-white/20 text-white" 
+                  ? "bg-white/20 text-white border-b-2 border-white" 
                   : "text-white/70 hover:text-white hover:bg-white/10"
               )}
             >
-              {s === 'devanagari' ? t('devanagari') : s === 'iast' ? t('roman') : t('telugu')}
+              {s === 'devanagari' ? 'देवनागरी' : s === 'iast' ? 'Roman' : 'తెలుగు'}
             </button>
           ))}
         </div>
@@ -172,7 +172,7 @@ function MeaningSection({ verse }: { verse: Verse }) {
         
         {/* Language Selection */}
         <div className="flex border-b border-border overflow-x-auto" style={{ backgroundColor: 'var(--knowledge-blue)' }}>
-          {(['sa', 'hi', 'bn', 'mr', 'en', 'te'] as MeaningLanguage[]).map((lang) => (
+          {(['sa', 'hi', 'bn', 'mr', 'gu', 'or', 'kn', 'en', 'te'] as MeaningLanguage[]).map((lang) => (
             <button
               key={lang}
               onClick={() => setLanguage(lang)}
@@ -183,7 +183,7 @@ function MeaningSection({ verse }: { verse: Verse }) {
                   : "text-white/70 hover:text-white hover:bg-white/10"
               )}
             >
-              {lang === 'sa' ? 'संस्कृतम्' : lang === 'hi' ? 'हिन्दी' : lang === 'bn' ? 'বাংলা' : lang === 'mr' ? 'मराठी' : lang === 'en' ? 'English' : 'తెలుగు'}
+              {lang === 'sa' ? 'संस्कृतम्' : lang === 'hi' ? 'हिन्दी' : lang === 'bn' ? 'বাংলা' : lang === 'mr' ? 'मराठी' : lang === 'gu' ? 'ગુજરાતી' : lang === 'or' ? 'ଓଡ଼ିଆ' : lang === 'kn' ? 'ಕನ್ನಡ' : lang === 'en' ? 'English' : 'తెలుగు'}
             </button>
           ))}
         </div>
@@ -234,7 +234,8 @@ function MeaningSection({ verse }: { verse: Verse }) {
 
 function TranslationSection({ verse }: { verse: Verse }) {
   const [isOpen, setIsOpen] = useState(true)
-  const { language } = useAppStore()
+  const { language: globalLanguage } = useAppStore()
+  const [language, setLanguage] = useState<MeaningLanguage>(globalLanguage as any)
   const { t } = useTranslation()
   
   return (
@@ -257,9 +258,26 @@ function TranslationSection({ verse }: { verse: Verse }) {
       </CollapsibleTrigger>
       
       <CollapsibleContent>
+        {/* Local Language Selection */}
+        <div className="flex border-b border-border overflow-x-auto" style={{ backgroundColor: 'var(--knowledge-blue)' }}>
+          {(['sa', 'hi', 'bn', 'mr', 'en', 'te'] as MeaningLanguage[]).map((lang) => (
+            <button
+              key={lang}
+              onClick={() => setLanguage(lang)}
+              className={cn(
+                "px-4 py-2 text-sm font-medium transition-colors whitespace-nowrap",
+                language === lang 
+                  ? "bg-white/20 text-white border-b-2 border-white" 
+                  : "text-white/70 hover:text-white hover:bg-white/10"
+              )}
+            >
+              {lang === 'sa' ? 'संस्कृतम्' : lang === 'hi' ? 'हिन्दी' : lang === 'bn' ? 'বাংলা' : lang === 'mr' ? 'मराठी' : lang === 'en' ? 'English' : 'తెలుగు'}
+            </button>
+          ))}
+        </div>
         <div className="p-4 bg-card">
           <p className="text-foreground leading-relaxed">
-            {verse.translations[language] || verse.translations.en}
+            {verse.translations[language as keyof typeof verse.translations] || verse.translations.en}
           </p>
         </div>
       </CollapsibleContent>
@@ -316,7 +334,7 @@ function CommentarySection({ verse }: { verse: Verse }) {
       <CollapsibleContent>
         {/* Local Language Selection */}
         <div className="flex border-b border-border overflow-x-auto" style={{ backgroundColor: 'var(--knowledge-blue)' }}>
-          {(['sa', 'hi', 'bn', 'mr', 'en', 'te'] as MeaningLanguage[]).map((lang) => (
+          {(['sa', 'hi', 'bn', 'mr', 'gu', 'or', 'kn', 'en', 'te'] as MeaningLanguage[]).map((lang) => (
             <button
               key={lang}
               onClick={() => setLanguage(lang)}
@@ -327,13 +345,13 @@ function CommentarySection({ verse }: { verse: Verse }) {
                   : "text-white/70 hover:text-white hover:bg-white/10"
               )}
             >
-              {lang === 'sa' ? 'संस्कृतम्' : lang === 'hi' ? 'हिन्दी' : lang === 'bn' ? 'বাংলা' : lang === 'mr' ? 'मराठी' : lang === 'en' ? 'English' : 'తెలుగు'}
+              {lang === 'sa' ? 'संस्कृतम्' : lang === 'hi' ? 'हिन्दी' : lang === 'bn' ? 'বাংলা' : lang === 'mr' ? 'मराठी' : lang === 'gu' ? 'ગુજરાતી' : lang === 'or' ? 'ଓଡ଼ିଆ' : lang === 'kn' ? 'ಕನ್ನಡ' : lang === 'en' ? 'English' : 'తెలుగు'}
             </button>
           ))}
         </div>
 
         {/* Sampradaya Tabs */}
-        <div className="flex flex-wrap border-b border-border overflow-x-auto">
+        <div className="flex flex-wrap border-b border-border overflow-x-auto" style={{ backgroundColor: 'var(--knowledge-blue)' }}>
           {verse.commentaries.map((commentary) => (
             <button
               key={commentary.sampradaya}
@@ -342,9 +360,9 @@ function CommentarySection({ verse }: { verse: Verse }) {
                 setActiveSubCommentary(subCommentaries[commentary.sampradaya]?.[0] || '')
               }}
               className={cn(
-                "px-4 py-2 text-sm font-medium transition-colors",
+                "px-4 py-2 text-sm font-medium transition-colors whitespace-nowrap",
                 activeSampradaya === commentary.sampradaya 
-                  ? "bg-white/20 text-white" 
+                  ? "bg-white/20 text-white border-b-2 border-white" 
                   : "text-white/70 hover:text-white hover:bg-white/10"
               )}
             >
